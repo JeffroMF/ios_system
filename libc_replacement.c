@@ -143,6 +143,7 @@ static pid_t last_allocated_pid = 0;
 void makeGlobal(void) {
     copyEnvironment[current_pid] = environment[current_pid];
     environment[current_pid] = NULL; // makes it really global
+    environment[current_pid] = NULL;
 }
 void makeLocal(void) {
     environment[current_pid] = copyEnvironment[current_pid];
